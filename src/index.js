@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {render} from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -54,5 +54,5 @@ const store = [{
     content : "못된 나뭇꾼은 빈손으로 마을로 돌아와 후회하였다."
 }];
 
-ReactDOM.render(<App store={store} />, document.getElementById('root'));
+render(<App store={store} />, document.getElementById('root'));
 registerServiceWorker();
