@@ -1,23 +1,10 @@
-import React from 'react';
-import {connect} from 'react-redux'
-import './App.css';
+import React from 'react'
+import Place from "../place/Place";
+import Charactor from "../charactor/Charactor";
+import Item from "../item/Item";
+import "./Event.css"
 
-const Charactor = ({data}) =>
-    <div className="charactor">
-        {data}
-    </div>;
-
-const Item = ({data}) =>
-    <div className="item">
-        {data}
-    </div>;
-
-const Place = ({data}) =>
-    <div className="place">
-        {data}
-    </div>;
-
-const W5Event = ({data}) =>
+const Event = ({data}) =>
     <article className="event">
         <h1>{data.title}</h1>
         <section className="where">
@@ -47,18 +34,4 @@ const W5Event = ({data}) =>
         </section>
     </article>;
 
-const App = connect(
-    state => ({
-        events : state.events
-    }))(({events}) =>
-    <div className="App">
-        <header className="App-header">
-            <h1 className="App-title">W5Graph</h1>
-        </header>
-        <main>
-            {events.map((eventData, index) =>
-                <W5Event key={index} data={eventData}/>)}
-        </main>
-    </div>);
-
-export default App;
+export default Event
