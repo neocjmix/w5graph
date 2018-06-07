@@ -1,10 +1,12 @@
 import React from 'react';
 import {render} from 'react-dom';
+import {Provider} from 'react-redux'
+import {createStore} from 'redux'
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-const store = [{
+const store = createStore(state => ({events : [{
     title: "분실",
     when : [0],
     where : ["숲속"],
@@ -52,7 +54,10 @@ const store = [{
     what : [],
     why : [4],
     content : "못된 나뭇꾼은 빈손으로 마을로 돌아와 후회하였다."
-}];
+}]}));
 
-render(<App store={store} />, document.getElementById('root'));
+render(
+    <Provider store={store}><App /></Provider>,
+    document.getElementById('root'));
+
 registerServiceWorker();

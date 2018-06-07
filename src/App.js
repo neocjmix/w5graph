@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux'
 import './App.css';
 
 const Charactor = ({data}) =>
@@ -46,15 +47,18 @@ const W5Event = ({data}) =>
         </section>
     </article>;
 
-const App = ({store}) =>
+const App = connect(
+    state => ({
+        events : state.events
+    }))(({events}) =>
     <div className="App">
         <header className="App-header">
             <h1 className="App-title">W5Graph</h1>
         </header>
         <main>
-            {store.map((eventData, index) =>
+            {events.map((eventData, index) =>
                 <W5Event key={index} data={eventData}/>)}
         </main>
-    </div>;
+    </div>);
 
 export default App;
