@@ -4,8 +4,8 @@ import Charactor from "../charactor/Charactor";
 import Item from "../item/Item";
 import Draggable from "../common/Draggable";
 
-const Event = ({data}) =>
-    <Draggable>
+const Event = ({data, onDragEnd}) =>
+    <Draggable onDragEnd={(e, state) => onDragEnd(state.x, state.y)}>
         <article className="event" style={{top:data.y, left:data.x}}>
             <h1>{data.title}</h1>
             <section className="where">

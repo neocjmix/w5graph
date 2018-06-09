@@ -38,7 +38,7 @@ class Draggable extends Component {
         });
         document.addEventListener('mousemove', this.moveComponent);
         document.addEventListener('mouseup', this.finishDragging);
-        this.props.onDragStart(e);
+        this.props.onDragStart(e, this.state);
     };
 
     moveComponent = e => {
@@ -52,7 +52,7 @@ class Draggable extends Component {
             }
         });
         e.preventDefault();
-        this.props.onDrag(e);
+        this.props.onDrag(e, this.state);
     };
 
     finishDragging = e => {
@@ -64,7 +64,7 @@ class Draggable extends Component {
                 isDragging: false
             }
         });
-        this.props.onDragEnd(e);
+        this.props.onDragEnd(e, this.state);
     };
 
     ComponentWillUnmount = () => {
