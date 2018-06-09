@@ -1,6 +1,33 @@
+.event-list{
+  padding:0;
+  position: relative;
+}
+
 .event{
   border: solid 1px #ddd;
   margin: 1em;
   border-radius: 3px;
-  padding: 1em;
+  padding: .5em;
+  position: absolute;
+  background: white;
+  max-width: 20em;
+}
+
+.event h1{
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.event section{
+  overflow: hidden;
+}
+.event section .title{
+  float:left;
+  font-size: 1em;
+  margin: 0;
+  clear: both;
+}
+
+.event section .value{
+  float:left;
 }

@@ -7,7 +7,7 @@ const App = () =>
         <header className="App-header">
             <h1 className="App-title">W5Graph</h1>
         </header>
-        <main>
+        <main className="App-main">
             <EventList />
         </main>
     </div>;
