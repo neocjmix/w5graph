@@ -1,6 +1,5 @@
 import React from 'react'
 import Event from "./Event"
-import {App} from "../app/App";
 import {connect} from "react-redux";
 import "./Event.css"
 
