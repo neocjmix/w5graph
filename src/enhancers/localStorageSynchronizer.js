@@ -16,8 +16,9 @@ export function saveState(state, key) {
     }
 }
 
-export default key => store => next => action => {
-    const result = next(action);
-    saveState(store.getState(), key);
-    return result;
+export default key => next => (reducer, initialState, enhancer) => {
+    const restoredState = restoreState(key);
+    const store = next(reducer, (restoredState == null) ? initialState: restoredState, enhancer);
+    store.subscribe(() => saveState(store.getState(), key));
+    return store;
 }
