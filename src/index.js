@@ -7,12 +7,11 @@ import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 import App from "./components/app/App";
 import root from './reducers'
+import {restoreState, saveState} from "./shared/localstorage";
 
-const savedState = JSON.parse(localStorage.getItem("state")) || {};
-const store = applyMiddleware(ReduxLogger)(createStore)(root, savedState);
-store.subscribe(() => {
-    localStorage.setItem("state", JSON.stringify(store.getState()))
-});
+const LOCAL_STORAGE_KEY = "state";
+const store = applyMiddleware(ReduxLogger)(createStore)(root, restoreState(LOCAL_STORAGE_KEY));
+store.subscribe(() => saveState(store, LOCAL_STORAGE_KEY));
 render(
     <Provider store={store}>
         <App />
