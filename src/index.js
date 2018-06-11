@@ -7,7 +7,7 @@ import ReduxLogger from 'redux-logger'
 import registerServiceWorker from './registerServiceWorker';
 import App from "./components/app/App";
 import root from './reducers'
-import localStorageSynchronizer from "./enhancer/localStorageSynchronizer";
+import localStorageSynchronizer from "./enhancers/localStorageSynchronizer";
 
 const store = createStore(
     root,
