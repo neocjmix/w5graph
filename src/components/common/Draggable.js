@@ -13,18 +13,6 @@ class Draggable extends Component {
         y: 0,
     };
 
-    ComponentDidUpdate = () => {
-        if ((this.state.x && this.state.x === this.props.x) &&
-            (this.state.y && this.state.y === this.props.y)) return;
-
-        this.setState({
-            ...this.state, ...{
-                x: this.props.x,
-                y: this.props.y,
-            }
-        })
-    };
-
     startDragging = e => {
         e.preventDefault();
         this.dragStartCursorX = e.pageX;
@@ -65,6 +53,19 @@ class Draggable extends Component {
             }
         });
         this.props.onDragEnd(e, this.state);
+    };
+
+    componentDidMount = () => this.setState({...this.state, ...{
+        x:this.props.x,
+        y:this.props.y
+    }});
+
+    componentDidUpdate = ({x,y}) => {
+        if(this.props.x === x && this.props.y === y) return;
+        this.setState({...this.state, ...{
+            x:this.props.x,
+            y:this.props.y
+        }});
     };
 
     ComponentWillUnmount = () => {
