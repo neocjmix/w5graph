@@ -1,6 +1,6 @@
 # W5Graph
 
-사건을 육하원칙에 따라 정리하고 그래프를 그릴 수 있는 라이브러리/웹앱
+Library / WebApps that can organize events and draw graphs according to the 5W1H (when, where, who, what, why, how)
 
 
 ## Install
@@ -10,9 +10,15 @@ npm install
 ```
 
 ## Run
+
 ```
 npm start
 ```
+
+### Customizing initial data
+
+edit `src/data/events.json`
+
 
 ## Authors
 
