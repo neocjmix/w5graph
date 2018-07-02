@@ -1,13 +1,13 @@
 # See https://help.github.com/ignore-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+/src/main/resources/node_modules
 
 # testing
-/coverage
+/src/main/resources/coverage
 
 # production
-/build
+/src/main/resources/build
 
 # misc
 .DS_Store
