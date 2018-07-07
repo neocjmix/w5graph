@@ -1,4 +1,4 @@
-package com.w5graph.service.config;
+package com.grawh.www.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
